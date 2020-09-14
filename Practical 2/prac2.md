@@ -9,14 +9,50 @@
 - IP address
   `ifconfig -a` or `ip address` or `ip a`
 
+- Change to static IP
+  In the file `/etc/network/interfaces`
+  Change dynamic to static wherever required
+  ```
+    # /etc/network/interfaces
+
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+
+    # The primary network interface
+    auto eth0
+    iface eth0 inet static
+        address 10.0.0.41
+        netmask 255.255.255.0
+        network 10.0.0.0
+        broadcast 10.0.0.255
+        gateway 10.0.0.1
+        dns-nameservers 10.0.0.1 8.8.8.8
+        dns-domain acme.com
+        dns-search acme.com
+  ```
+  Restart the network:
+  `ifdown eth0` `ifup eth0`
+
+
+- Disabling IPv6
+  In the file `/etc/sysctl.conf`,
+  Change the following lines:
+  ```
+  net.ipv6.conf.all.disable_ipv6 = 1
+  net.ipv6.conf.default.disable_ipv6 = 1
+  ```
+
 - Start, Stop, Restart services:
   `sudo systemctl start SERVICE_NAME`
   `sudo systemctl stop SERVICE_NAME`
   `sudo systemctl restart SERVICE_NAME`
-  
 
 - List running services
   `sudo systemctl -t=service --state=running`
 
 - Installing packages
-  `sudo apt install package-name`
+  `sudo apt-get install package-name`
