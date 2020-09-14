@@ -42,7 +42,10 @@ subnet 10.0.2.15 netmask 255.255.255.0 {
 
 ---
 - To start the dhcp service, run the following command:
-  `sudo systemctl start isc-dhcp-server`
+  `sudo systemctl start isc-dhcp-server.service`
 
 - To enable the service, run the command:
-  `sudo systemctl enable isc-dhcp-server`
+  `sudo systemctl enable isc-dhcp-server.service`
+
+- To check service status, run the command:
+  `sudo systemctl status isc-dhcp-server.service`
