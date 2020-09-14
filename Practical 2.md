@@ -3,17 +3,17 @@
 > ##### Initial settings: Adding a User, Network Settings, Change to static IP address, Disable IPv6 if not needed, Configure Services, display the list of services which are running, Stop and turn OFF auto-start setting for a service if you don’t need it, Sudo Settings
 >---
 
-> Adding a User
+> **Adding a User**
 
 - `adduser <username>` or `useradd <username>`
 - To add a user to a group,
   `sudo adduser <username> <groupname>`
 
 
-> IP address
+> **IP address**
 - `ifconfig -a` or `ip address` or `ip a`
 
-> Change to static IP
+> **Change to static IP**
   - In the file `/etc/network/interfaces`
   Change dynamic to static wherever required
   - ```
@@ -41,7 +41,7 @@
   `ifdown eth0` `ifup eth0`
 
 
-> Disabling IPv6
+> **Disabling IPv6**
 - In the file `/etc/sysctl.conf`,
   Change the following lines:
 - ```
@@ -49,14 +49,14 @@
   net.ipv6.conf.default.disable_ipv6 = 1
   ```
 
-> Start, Stop, Restart services:
+> **Start, Stop, Restart services:**
   - `sudo systemctl start SERVICE_NAME`
   - `sudo systemctl stop SERVICE_NAME`
   - `sudo systemctl restart SERVICE_NAME`
 
-> List running services
+> **List running services**
   - `sudo systemctl -t=service --state=running`
 
-> Installing packages
+> **Installing packages**
   - `sudo apt-get install package-name`
 ---

@@ -7,7 +7,7 @@ __DHCP: Dynamic Host Configuration Protocol__
 
 A DHCP server is responsible for automatically providing, and assigning IP addresses, default gateways and other network parameters to client devices.
 
->Installation
+> **Installation**
 - To install dhcp server on ubuntu:
 `sudo apt-get install isc-dhcp-server`
 
@@ -23,7 +23,6 @@ A DHCP server is responsible for automatically providing, and assigning IP addre
 ---
 - Next we have to change some settings in the configuration file at `/etc/dhcp/dhcpd.conf`
 This will be changed based on your network configuration, i.e. IP aaddress, subnet mask, broadcast address, etc, based on your system.
-
 ```
 # /etc/dhcp/dhcpd.conf
 
