@@ -1,6 +1,6 @@
 >---
 > # **Practical 1**
-> #### - Installation of DHCP Server in Ubuntu
+> #####  Installation of DHCP Server in Ubuntu
 >---
 
 __DHCP: Dynamic Host Configuration Protocol__
