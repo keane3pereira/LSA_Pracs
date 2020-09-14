@@ -3,16 +3,20 @@
 > ##### Initial settings: Adding a User, Network Settings, Change to static IP address, Disable IPv6 if not needed, Configure Services, display the list of services which are running, Stop and turn OFF auto-start setting for a service if you don’t need it, Sudo Settings
 >---
 
-- Adding a User
-`adduser <username>`
+> Adding a User
 
-- IP address
-  `ifconfig -a` or `ip address` or `ip a`
+- `adduser <username>` or `useradd <username>`
+- To add a user to a group,
+  `sudo adduser <username> <groupname>`
 
-- Change to static IP
-  In the file `/etc/network/interfaces`
+
+> IP address
+- `ifconfig -a` or `ip address` or `ip a`
+
+> Change to static IP
+  - In the file `/etc/network/interfaces`
   Change dynamic to static wherever required
-  ```
+  - ```
     # /etc/network/interfaces
 
     # This file describes the network interfaces available on your system
@@ -31,28 +35,28 @@
         broadcast 10.0.0.255
         gateway 10.0.0.1
         dns-nameservers 10.0.0.1 8.8.8.8
-        dns-domain acme.com
-        dns-search acme.com
-  ```
-  Restart the network:
+        dns-domain kali.com
+        dns-search kali.com ```
+  - Restart the network:
   `ifdown eth0` `ifup eth0`
 
 
-- Disabling IPv6
-  In the file `/etc/sysctl.conf`,
+> Disabling IPv6
+- In the file `/etc/sysctl.conf`,
   Change the following lines:
-  ```
+- ```
   net.ipv6.conf.all.disable_ipv6 = 1
   net.ipv6.conf.default.disable_ipv6 = 1
   ```
 
-- Start, Stop, Restart services:
-  `sudo systemctl start SERVICE_NAME`
-  `sudo systemctl stop SERVICE_NAME`
-  `sudo systemctl restart SERVICE_NAME`
+> Start, Stop, Restart services:
+  - `sudo systemctl start SERVICE_NAME`
+  - `sudo systemctl stop SERVICE_NAME`
+  - `sudo systemctl restart SERVICE_NAME`
 
-- List running services
-  `sudo systemctl -t=service --state=running`
+> List running services
+  - `sudo systemctl -t=service --state=running`
 
-- Installing packages
-  `sudo apt-get install package-name`
+> Installing packages
+  - `sudo apt-get install package-name`
+---
