@@ -37,11 +37,12 @@
 
 `ssh kali@127.0.0.1`
 
-![image](https://drive.google.com/uc?export=view&id=1cdgtPIayYE8Q-ChcQ3XbE7KtVWylI7s_)
 
-> To configure the ssh, the file is located at `/etc/ssh/sshd_config`.
-> 
+<img src="res/prac3/test_ssh.png">
+
+> To configure the ssh, the file is located at `/etc/ssh/sshd_config`
 > It contains options to configure the ssh. After configuring, restart the service, and your changes will be applied.
 
-![image](https://drive.google.com/uc?export=view&id=1Sq49V4cf81OkOclq4qdV56XMc62TzNJw)
+<img src="res/prac3/config.png">
+
 ___
