@@ -40,8 +40,8 @@
 
 ![image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/test_ssh.PNG)
 
-> To configure the ssh, the file is located at `/etc/ssh/sshd_config`
-> It contains options to configure the ssh. After configuring, restart the service, and your changes will be applied.
+> **To configure the ssh, the file is located at `/etc/ssh/sshd_config`
+> It contains options to configure the ssh. After configuring, restart the service, and your changes will be applied.**
 
 ![image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/config.PNG)
 
