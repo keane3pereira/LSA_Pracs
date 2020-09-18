@@ -1,5 +1,5 @@
 >---
-> # **Practical 6**
+> # **Practical 4**
 > ##### Configure DHCP (Dynamic Host Configuration Protocol) Server, Configure NFS Server to share directories on your Network, Configure NFS Client.
 >---
 
