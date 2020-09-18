@@ -58,7 +58,7 @@ _**Note:** Username must belong to a system account._
 
 > **Open the file explorer, type  `smb://<ip-address>/<shared_file>`**
 ```
-smd://127.0.0.1/sambashare
+smb://127.0.0.1/sambashare
 ```
 
 ![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac5/smb-dir.PNG)
