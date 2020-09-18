@@ -1,48 +1,73 @@
 >---
-> # **Practical 4**
-> ##### SSH Server: Password Authentication Configure SSH Server to manage a server from the reomte computer, SSH Client.
+> # **Practical 6**
+> ##### Configure DHCP (Dynamic Host Configuration Protocol) Server, Configure NFS Server to share directories on your Network, Configure NFS Client.
 >---
 
+> ### **Configuring the Server Machine**
 
-> **Install SSH**
+> **Install NFS Kernel Server**
 
-`sudo apt-get install openssh-server`
+`sudo apt-get update`
 
-> **Start the service**
+`sudo apt install nfs-kernel-server`
 
-`sudo systemctl start ssh`
+> **Create the export directory**
 
-> **Enable the service**
+`sudo mkdir -p /mnt/sharedfolder`
 
-`sudo systemctl enable ssh`
+`sudo chown nobody:nogroup /mnt/sharedfolder`
 
-> **Install UFW** _(This is the firewall package)_
+`sudo chmod 777 /mnt/sharedfolder`
 
-`sudo apt-get install ufw`
+> **Adding a test file `a.txt` to test whether this works.**
 
+![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/atxt.PNG)
 
-> **Allow ssh through the firewall**
+> **Assign server access to clients through the export file `/etc/exports`**
+> 
+> **A single client by adding the following line:
+`/mnt/sharedfolder <client_ip>(rw,sync,no_subtree_check)`**
 
-`sudo ufw allow ssh`
+![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/etcexports.PNG)
 
-> **Enable the firewall**
+> **Export the shared directory**
 
-`sudo ufw enable`
+`sudo exportfs -a`
 
-> **Check the status of the firewall**
+> **Restart the service**
 
+`sudo systemctl restart nfs-kernel-server`
+
+> **Allow client through the firewall**
+
+`sudo ufw allow from <client_ip> to any port nfs`
+
+> **Check ufw status**
 `sudo ufw status`
 
-> **Now you can test login**
+![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/ufwstatus.PNG)
 
-`ssh kali@127.0.0.1`
+___
 
+> ## **Configuring the Client machine:**
 
-![image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/test_ssh.PNG)
+> **Update, the install nfs-common**
 
-> **To configure the ssh, the file is located at `/etc/ssh/sshd_config`
-> It contains options to configure the ssh. After configuring, restart the service, and your changes will be applied.**
+`sudo apt-get update`
 
-![image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/config.PNG)
+`sudo apt-get install nfs-common`
+
+> **Create a mount point for the host shared folder, to become accessible**
+
+`sudo mkdir -p /mnt/sharedfolder_client`
+
+> **Mount the shared directory on the Client using the command**
+`sudo mount <server_ip>:<export_folder_server> </mnt/mountfolder_client>`
+
+`sudo mount 127.0.0.1:/mnt/sharedfolder /mnt/sharedfolder_client`
+
+> **The folder will now be accessible**
+
+![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/clientatxt.PNG)
 
 ___
