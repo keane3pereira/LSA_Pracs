@@ -1,8 +1,7 @@
 >---
-> # **Practical 4**
+> # **Practical 3**
 > ##### SSH Server: Password Authentication Configure SSH Server to manage a server from the reomte computer, SSH Client.
 >---
-
 
 > **Install SSH**
 
