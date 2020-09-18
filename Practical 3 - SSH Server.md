@@ -4,37 +4,45 @@
 >---
 
 > **Install SSH**
-
-`sudo apt-get install openssh-server`
+```
+sudo apt-get install openssh-server
+```
 
 > **Start the service**
-
-`sudo systemctl start ssh`
+```
+sudo systemctl start ssh
+```
 
 > **Enable the service**
-
-`sudo systemctl enable ssh`
+```
+sudo systemctl enable ssh
+```
 
 > **Install UFW** _(This is the firewall package)_
-
-`sudo apt-get install ufw`
+```
+sudo apt-get install ufw
+```
 
 
 > **Allow ssh through the firewall**
-
-`sudo ufw allow ssh`
+```
+sudo ufw allow ssh
+```
 
 > **Enable the firewall**
-
-`sudo ufw enable`
+```
+sudo ufw enable
+```
 
 > **Check the status of the firewall**
-
-`sudo ufw status`
+```
+sudo ufw status
+```
 
 > **Now you can test login**
-
-`ssh kali@127.0.0.1`
+```
+ssh kali@127.0.0.1
+```
 
 
 ![image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac3/test_ssh.PNG)

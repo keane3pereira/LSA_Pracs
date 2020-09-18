@@ -6,18 +6,27 @@
 > ### **Configuring the Server Machine**
 
 > **Install NFS Kernel Server**
+```
+sudo apt-get update
+```
 
-`sudo apt-get update`
-
-`sudo apt install nfs-kernel-server`
+```
+sudo apt install nfs-kernel-server
+```
 
 > **Create the export directory**
 
-`sudo mkdir -p /mnt/sharedfolder`
+```
+sudo mkdir -p /mnt/sharedfolder
+```
 
-`sudo chown nobody:nogroup /mnt/sharedfolder`
+```
+sudo chown nobody:nogroup /mnt/sharedfolder
+```
 
-`sudo chmod 777 /mnt/sharedfolder`
+```
+sudo chmod 777 /mnt/sharedfolder
+```
 
 > **Adding a test file `a.txt` to test whether this works.**
 
@@ -32,18 +41,26 @@
 
 > **Export the shared directory**
 
-`sudo exportfs -a`
+```
+sudo exportfs -a
+```
 
 > **Restart the service**
 
-`sudo systemctl restart nfs-kernel-server`
+```
+sudo systemctl restart nfs-kernel-server
+```
 
 > **Allow client through the firewall**
 
-`sudo ufw allow from <client_ip> to any port nfs`
+```
+sudo ufw allow from <client_ip> to any port nfs
+```
 
 > **Check ufw status**
-`sudo ufw status`
+```
+sudo ufw status
+```
 
 ![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/ufwstatus.PNG)
 
@@ -53,18 +70,28 @@ ___
 
 > **Update, the install nfs-common**
 
-`sudo apt-get update`
+```
+sudo apt-get update
+```
 
-`sudo apt-get install nfs-common`
+```
+sudo apt-get install nfs-common
+```
 
 > **Create a mount point for the host shared folder, to become accessible**
 
-`sudo mkdir -p /mnt/sharedfolder_client`
+```
+sudo mkdir -p /mnt/sharedfolder_client
+```
 
 > **Mount the shared directory on the Client using the command**
-`sudo mount <server_ip>:<export_folder_server> </mnt/mountfolder_client>`
+```
+sudo mount <server_ip>:<export_folder_server> </mnt/mountfolder_client>
+```
 
-`sudo mount 127.0.0.1:/mnt/sharedfolder /mnt/sharedfolder_client`
+```
+sudo mount 127.0.0.1:/mnt/sharedfolder /mnt/sharedfolder_client
+```
 
 > **The folder will now be accessible**
 
