@@ -15,7 +15,12 @@ sudo apt-get install isc-dhcp-server
 
 - The server has to be configured based on the ip address. To check you ip address, the command is `ip address` or `ip a`
 - You will also get info on the NIC card used. In this example we take `eth0`
-- For example, we take IP address is `10.0.2.15`
+
+To set the ip address command is
+```
+sudo ifconfig eth0 192.168.106.128 netmask 255.255.255.0
+```
+- For example, we take IP address is `192.168.106.128`
 ---
 - First we have to edit the default file that specifies the interfaces: `/etc/default/isc-dhcp-server`
 - To edit, run 
@@ -30,22 +35,24 @@ sudo apt-get install isc-dhcp-server
 ---
 - Next we have to change some settings in the configuration file at `/etc/dhcp/dhcpd.conf`
 This will be changed based on your network configuration, i.e. IP aaddress, subnet mask, broadcast address, etc, based on your system.
+This is the code in the file:
 ```
 # /etc/dhcp/dhcpd.conf
 
 ddns-update-style none;
+
 authoritative;
 
-subnet 10.0.2.15 netmask 255.255.255.0 {
-  range 10.0.2.1 10.0.2.254;
-  option subnet-mask 255.255.255.0;
-  option routers 10.0.2.255;
-  option broadcast-address 10.0.2.255;
-  default-lease 600;
+subnet 192.168.106.0 netmask 255.255.255.0 {
+  range 192.168.106.200  192.168.106.225;
+  option domain-name-servers 192.168.106.128,8.8.8.8;
+  option domain-name "kali";
+  option routers 192.168.106.255;
+  option broadcast-address 192.168.106.255;
+  default-lease-time 600;
   max-lease-time 7200;
 }
 ```
-- The remaining lines in the dhcpd.conf file will be commented.
 
 ---
 - To start the dhcp service, run the following command:
@@ -62,3 +69,7 @@ subnet 10.0.2.15 netmask 255.255.255.0 {
   ```
   sudo systemctl status isc-dhcp-server.service
   ```
+
+```
+sudo dhcpd -T eth0
+```
