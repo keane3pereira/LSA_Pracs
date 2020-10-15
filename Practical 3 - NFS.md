@@ -30,14 +30,14 @@ sudo chmod 777 /mnt/sharedfolder
 
 > **Adding a test file `a.txt` to test whether this works.**
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/atxt.PNG)
+![atxt](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/nfs/atxt.PNG)
 
 > **Assign server access to clients through the export file `/etc/exports`**
 > 
 > **A single client by adding the following line:
 `/mnt/sharedfolder <client_ip>(rw,sync,no_subtree_check)`**
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/etcexports.PNG)
+![etcexports](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/nfs/etcexports.PNG)
 
 > **Export the shared directory**
 
@@ -62,7 +62,7 @@ sudo ufw allow from <client_ip> to any port nfs
 sudo ufw status
 ```
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/ufwstatus.PNG)
+![ufwstatus](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/nfs/ufwstatus.PNG)
 
 ___
 
@@ -95,6 +95,6 @@ sudo mount 127.0.0.1:/mnt/sharedfolder /mnt/sharedfolder_client
 
 > **The folder will now be accessible**
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac4/clientatxt.PNG)
+![clientatxt](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/nfs/clientatxt.PNG)
 
 ___

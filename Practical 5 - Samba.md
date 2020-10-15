@@ -17,7 +17,7 @@ mkdir /home/kali/sambashare/
 
 > **Created two files to test**
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac5/shared_dir.PNG)
+![shared_dir](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/samba/shared_dir.PNG)
 
 
 > **The configuration file. Have to add the directory we want to share.**
@@ -34,7 +34,7 @@ sudo nano /etc/samba/smb.conf
     browsable = yes
 ```
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac5/smb-conf.PNG)
+![smb_conf](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/samba/smb-conf.PNG)
 
 > **Start/Restart the service**
 ```
@@ -46,7 +46,7 @@ sudo service smbd restart
 sudo ufw allow samba
 ```
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac5/service-ufw.PNG)
+![service-ufw](res/samba/service-ufw.PNG)
 
 > **Setting up User Account**
 ```
@@ -54,12 +54,12 @@ sudo smbpasswd -a kali
 ```
 _**Note:** Username must belong to a system account._
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac5/adduser.PNG)
+![adduser](res/samba/adduser.PNG)
 
 > **Open the file explorer, type  `smb://<ip-address>/<shared_file>`**
 ```
 smb://127.0.0.1/sambashare
 ```
 
-![Image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac5/smb-dir.PNG)
+![smbdir](res/samba/smb-dir.PNG)
 ___

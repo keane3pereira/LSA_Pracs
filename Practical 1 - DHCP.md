@@ -22,6 +22,11 @@ sudo ifconfig eth0 192.168.106.128 netmask 255.255.255.0
 ```
 - For example, we take IP address is `192.168.106.128`
 ---
+
+Delete the pid if exists
+```
+sudo rm -f /var/run/dhcpd.pid
+```
 - First we have to edit the default file that specifies the interfaces: `/etc/default/isc-dhcp-server`
 - To edit, run 
   ```
@@ -53,6 +58,7 @@ subnet 192.168.106.0 netmask 255.255.255.0 {
   max-lease-time 7200;
 }
 ```
+The rest of the lines can be commented
 
 ---
 - To start the dhcp service, run the following command:

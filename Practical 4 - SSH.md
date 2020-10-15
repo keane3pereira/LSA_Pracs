@@ -1,6 +1,6 @@
 >---
 > # **Practical 3**
-> ##### SSH Server: Password Authentication Configure SSH Server to manage a server from the reomte computer, SSH Client.
+> ##### SSH Server: Password Authentication Configure SSH Server to manage a server from the remote computer, SSH Client.
 >---
 
 > **Install SSH**
@@ -45,11 +45,11 @@ ssh kali@127.0.0.1
 ```
 
 
-![image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac3/test_ssh.PNG)
+![testssh](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ssh/test_ssh.PNG)
 
 > **To configure the ssh, the file is located at `/etc/ssh/sshd_config`
 > It contains options to configure the ssh. After configuring, restart the service, and your changes will be applied.**
 
-![image](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/prac3/config.PNG)
+![config](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ssh/config.PNG)
 
 ___
