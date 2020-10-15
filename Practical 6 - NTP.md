@@ -48,7 +48,7 @@ cd /etc
 ls -lrth *ntp.conf
 ```
 
-![ls](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ntp/ls.png)
+![ls](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ntp/ls.PNG)
 
 - Edit the config file
 
@@ -62,7 +62,7 @@ sudo nano /etc/ntp.conf
 server localhost
 ```
 
-![ntp.conf](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ntp/ntp.conf.png)
+![ntp.conf](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ntp/ntp.conf.PNG)
 
 - Start/Restart the service
 
@@ -82,4 +82,4 @@ sudo systemctl status ntp
 sudo ntpq -p
 ```
 
-![ntpq](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ntp/ntpq.png)
+![ntpq](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/ntp/ntpq.PNG)

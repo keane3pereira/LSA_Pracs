@@ -27,7 +27,7 @@ sudo apt-get install wget
 wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
 ```
 
-![wget](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/wget.png)
+![wget](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/wget.PNG)
 
 - Install the downloaded package
 
@@ -35,11 +35,11 @@ wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
 sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
 ```
 
-![bionic](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/bionic.png)
+![bionic](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/bionic.PNG)
 
-![ok](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/ok.png)
+![ok](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/ok.PNG)
 
-![dpkg](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/dpkg.png)
+![dpkg](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/dpkg.PNG)
 
 - Update apt again
 
@@ -53,9 +53,9 @@ sudo apt-get update
 sudo apt-get install mysql-community-server
 ```
 
-![ok2](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/ok2.png)
+![ok2](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/ok2.PNG)
 
-![passwd](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/root.png)
+![passwd](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/root.PNG)
 
 - Enable and start the service
 
@@ -72,7 +72,7 @@ Check the status of the service
 sudo systemctl status mysql
 ```
 
-![status](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/status.png)
+![status](https://raw.githubusercontent.com/keane3pereira/LSA_Pracs/master/res/mysql/status.PNG)
 
 - Log in to mysql
 
